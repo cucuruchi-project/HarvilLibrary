@@ -1,0 +1,6 @@
+name: HarvilLibrary
+version: '${version}'
+main: com.cucuruchi.harvillibrary.HarvilLibrary
+api-version: '1.20'
+description: Minecraft Harvil Server Plugin Development Library
+author: cucuruchi
