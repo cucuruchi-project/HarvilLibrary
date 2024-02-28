@@ -25,7 +25,7 @@ public class MessageExtension {
     public static void helpMessage(Player player, String prefix, String label, String... subcommands){
         sendMessage(player, prefix);
         Arrays.stream(subcommands).toList().forEach(
-            subcommand -> sendMessages(player, "┗   " + label + " " + subcommand));
+            subcommand -> sendMessages(player, "&7┗   &8" + label + " " + subcommand));
     }
 
     public static TextComponent HoverClickableMessage(Player player, String message, String hoverText, String clickAction, String clickActionData) {
