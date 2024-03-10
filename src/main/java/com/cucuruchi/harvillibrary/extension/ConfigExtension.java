@@ -7,21 +7,17 @@ import org.bukkit.plugin.Plugin;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 public class ConfigExtension {
 
     private File file;
     private static FileConfiguration customFile;
     private final Plugin plugin;
-    private final String filename;
 
-    public ConfigExtension(String path, Plugin plugin, String filename) {
+    public ConfigExtension(Plugin plugin, String path, String filename) {
         this.plugin = plugin;
-        this.filename = filename;
-        this.file = new File(path, this.filename + ".yml");
-        if (this.file.exists()) {
-            customFile = YamlConfiguration.loadConfiguration(this.file);
-        }
+        setup(path, filename);
     }
 
 
@@ -45,10 +41,6 @@ public class ConfigExtension {
         }
 
         save();
-    }
-
-    public FileConfiguration get() {
-        return customFile;
     }
 
     public void save() {
@@ -90,7 +82,7 @@ public class ConfigExtension {
     }
 
     public void deleteFile(String path, String filename){
-        file = new File(path + "/coupon/", filename + ".yml");
+        file = new File(path, filename + ".yml");
         if (!file.exists()) {
             Bukkit.getLogger().warning("Could not delete config file: " + filename);
             return;
@@ -98,4 +90,43 @@ public class ConfigExtension {
         file.delete();
     }
 
+    public String getString(String key) {
+        return customFile.getString(key);
+    }
+
+    public int getInt(String key) {
+        return customFile.getInt(key);
+    }
+
+    public double getDouble(String key) {
+        return customFile.getDouble(key);
+    }
+
+    public boolean getBoolean(String key) {
+        return customFile.getBoolean(key);
+    }
+
+    public List<?> getList(String key) {
+        return customFile.getList(key);
+    }
+
+    public List<String> getStringList(String key) {
+        return customFile.getStringList(key);
+    }
+
+    public List<Integer> getIntList(String key) {
+        return customFile.getIntegerList(key);
+    }
+
+    public List<Double> getDoubleList(String key) {
+        return customFile.getDoubleList(key);
+    }
+
+    public List<Boolean> getBooleanList(String key) {
+        return customFile.getBooleanList(key);
+    }
+
+    public FileConfiguration get(String key){
+        return customFile;
+    }
 }
