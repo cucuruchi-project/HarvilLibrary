@@ -49,7 +49,7 @@ processResources {
 }
 jar {
     destinationDirectory = new File (
-            "C:/Users/GH/Desktop/test/plugins",
+            "C:/Users/이규호/Desktop/라이브러리",
     )
     manifest {
         attributes 'Main-Class' : 'com.cucuruchi.harvillibrary.HarvilLibrary'

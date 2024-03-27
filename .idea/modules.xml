@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HarvilLibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/HarvilLibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.cucuruchi.harvillibrary.HarvilLibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.cucuruchi.harvillibrary.HarvilLibrary.main.iml" />
     </modules>
   </component>
 </project>

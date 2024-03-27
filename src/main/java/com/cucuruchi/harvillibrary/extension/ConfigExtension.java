@@ -1,6 +1,7 @@
 package com.cucuruchi.harvillibrary.extension;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -28,7 +29,7 @@ public class ConfigExtension {
             dataFolder.mkdirs();
         }
 
-        file = new File(dataFolder, config);
+        file = new File(path, config);
         if (!file.exists()) {
             try (InputStream inputStream = plugin.getResource(config);
                  Reader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
